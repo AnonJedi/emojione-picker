@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { AutoSizer, List } from "react-virtualized";
 import findIndex from "lodash/findIndex";
 import throttle from "lodash/throttle";
 import CategoryHeader from "./category-header";
 import EmojiRow from "./emoji-row";
-import Modifiers from "./modifiers";
 
 // These height values must be kept in sync with the heights
 // (margin + padding + content height) defined in CSS.
@@ -14,19 +12,19 @@ const EMOJI_ROW_HEIGHT = 32;
 
 export default class Categories extends Component {
   static propTypes = {
-    rows: PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.shape({
-          category: PropTypes.object.isRequired,
-          id: PropTypes.string.isRequired
+    rows: React.PropTypes.arrayOf(
+      React.PropTypes.oneOfType([
+        React.PropTypes.shape({
+          category: React.PropTypes.object.isRequired,
+          id: React.PropTypes.string.isRequired
         }),
-        PropTypes.arrayOf(PropTypes.object).isRequired
+        React.PropTypes.arrayOf(React.PropTypes.object).isRequired
       ])
     ).isRequired,
-    modifier: PropTypes.string.isRequired,
-    onActiveCategoryChange: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onModifierChange: PropTypes.func.isRequired
+    modifier: React.PropTypes.string.isRequired,
+    onActiveCategoryChange: React.PropTypes.func.isRequired,
+    onChange: React.PropTypes.func.isRequired,
+    onModifierChange: React.PropTypes.func.isRequired
   };
 
   constructor(props, context) {

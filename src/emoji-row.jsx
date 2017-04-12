@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import shallowCompare from "react-addons-shallow-compare";
 import Emoji from "./emoji";
 
 export default class EmojiRow extends Component {
   static propTypes = {
-    emojis: PropTypes.array.isRequired,
-    onChange: PropTypes.func.isRequired,
-    style: PropTypes.object.isRequired
+    emojis: React.PropTypes.array.isRequired,
+    onChange: React.PropTypes.func.isRequired,
+    style: React.PropTypes.object.isRequired
   };
 
   shouldComponentUpdate(nextProps, nextState) {

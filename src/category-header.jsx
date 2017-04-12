@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import shallowCompare from "react-addons-shallow-compare";
 
 export default class CategoryHeader extends Component {
   static propTypes = {
-    category: PropTypes.shape({
-      title: PropTypes.string.isRequired
+    category: React.PropTypes.shape({
+      title: React.PropTypes.string.isRequired
     }).isRequired,
-    headingDecoration: PropTypes.node,
-    onChange: PropTypes.func.isRequired,
-    style: PropTypes.object
+    headingDecoration: React.PropTypes.node,
+    onChange: React.PropTypes.func.isRequired,
+    style: React.PropTypes.object
   };
 
   shouldComponentUpdate(nextProps, nextState) {
