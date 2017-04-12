@@ -118,14 +118,6 @@ export default class Categories extends Component {
       style
     };
 
-    if (index === 0) {
-      const { modifier, onModifierChange } = this.props;
-
-      attributes.headingDecoration = (
-        <Modifiers active={modifier} onChange={onModifierChange} />
-      );
-    }
-
     return <CategoryHeader {...attributes} />;
   };
 
